@@ -1,108 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
     <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
-</head>
-<body>
-    <nav>
-     <i class="ri-menu-line"></i>
-     <h1>Discover</h1>
-    <div class="profile"></div>
-    </nav>
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+ 
+    
+    <div class="sidebar-overlay"></div>
     <main>
-        <div class="heading">Recently Played</div>
-        <div class="container">
-        <div class="cards">
-            <img src="https://tse2.mm.bing.net/th/id/OIP.e1HlluWmfLvBzS9rVSfMCAHaHa?pid=Api&P=0&h=180" alt="img">
+      <div class="music-container">
+        <div class="side-bar">
+          <div class="side-top">
+            <div class="three-dot">
+              <i class="ri-circle-fill"></i>
+              <i class="ri-circle-fill"></i>
+              <i class="ri-circle-fill"></i>
+            </div>
+            <h4 class="side-menu"><i class="ri-menu-line"></i></h4>
+          </div>
+          <div class="side-middle">
+            <div class="side-middle-con">
+              <h1>Menu</h1>
+              <div class="up-con">
+                <h3><i class="ri-home-2-fill"></i> Discover</h3>
+                <h3><i class="ri-headphone-fill"></i>Trending</h3>
+                <h3><i class="ri-broadcast-line"></i>Streaming</h3>
+              </div>
+              <h1>Playlists</h1>
+              <div class="up-con">
+                <h3><i class="ri-folder-music-fill"></i>Chritmas Vibes</h3>
+                <h3><i class="ri-folder-music-line"></i> Special</h3>
+                <h3><i class="ri-mv-ai-fill"></i>Old Vibes 2002</h3>
+              </div>
+              <button class="playlist-btn">
+                add playlist <i class="ri-add-line"></i>
+              </button>
+            </div>
+          </div>
 
-            <h2>P.I.M.P</h2>
-            <P>cold Heart feat <br> Elton john and due</P>
+          <div class="side-bottom">
+            <h1>Bookmarks</h1>
+            <!-- <div class="book-con">
+                <div class="img-con">
+                  <img src="assets/music-image/saiba.jpeg" alt="">
+                </div>
+                <div class="text-con">
+                  <h3>Saiba</h3>
+                  <p>Monsoon</p>
+                </div>
+                <div class="icon-con">
+                  <i class="ri-delete-bin-6-fill"></i>
+                </div>
+              </div> -->
+          </div>
         </div>
-        <div class="cards">
-            <img src="https://tse2.mm.bing.net/th/id/OIP.e1HlluWmfLvBzS9rVSfMCAHaHa?pid=Api&P=0&h=180" alt="img">
+        <div class="main-cont">
+          <div class="nav">
+            <div class="nav1">Discover</div>
+            <div class="nav2">
+              <i class="ri-more-2-fill" id="three"></i>
+              <i class="ri-cast-line"></i>
+              <i class="ri-snapchat-line"></i>
+              <div class="profile">
+                <img src="assets/profile.jpeg" alt="" />
+              </div>
+              <i class="ri-menu-line hamburger"></i>
+            </div>
+          </div>
 
-            <h2>P.I.M.P</h2>
-            <P>cold Heart feat <br> Elton john and due</P>
-        </div>
-        <div class="cards">
-            <img src="https://tse2.mm.bing.net/th/id/OIP.e1HlluWmfLvBzS9rVSfMCAHaHa?pid=Api&P=0&h=180" alt="img">
+          <div class="recent-played">
+            <h1>recently-played</h1>
+            <div class="recent-con">
+              <!-- <div class="music-con5">
+                <div class="music-img">
+                  <img src="assets/music-image/saiba.jpeg" alt="" />
+                </div>
+                <div class="h3">Sahiba</div>
+               <div class="p">sss</div>
+              </div> -->
+            </div>
+          </div>
 
-            <h2>P.I.M.P</h2>
-            <P>cold Heart feat <br> Elton john and due</P>
-        </div>
-        <div class="cards">
-            <img src="https://tse2.mm.bing.net/th/id/OIP.e1HlluWmfLvBzS9rVSfMCAHaHa?pid=Api&P=0&h=180" alt="img">
+          <div class="Top-Songs">
+            <div class="top-title">Top 100 Songs</div>
+            <div class="song-con">
+              <!--<div class="song-card">
+                <div class="rank">1</div>
+                <div class="song">
+                  <div class="song-img">
+                    <img src="assets/music-image/Obsessed.jpeg" alt="">
+                  </div>
+                  <div class="song-info">
+                    <h3>Obsessed</h3>
+                    <p>Riar Saab & Abhijay Sharma</p>
+                </div>
+                </div>
+                <div class="album-name">Gully Gang and Mass Appeal</div>
+                <div class="song-view"><i class="ri-music-2-fill"></i> 256415</div>
+                <div class="song-time"><i class="ri-time-line"></i>3.30</div>
+                <div class="like-section">
+                  <i class="ri-heart-3-line contr-icon" id="like"></i>
+                </div>
+                <div class="option">
+                  <i class="ri-more-2-fill"></i>
+                </div>
+              </div>-->
+            </div>
+          </div>
 
-            <h2>P.I.M.P</h2>
-            <P>cold Heart feat <br> Elton john and due</P>
+          <div class="music-controller">
+            <div class="left">
+              <div class="left-img">
+                <img src="assets/music-image/saiba.jpeg" alt="" />
+              </div>
+            </div>
+            <div class="right">
+              <div class="right-top">
+                <div class="like-dwn actions">
+                  <i class="ri-heart-3-line contr-icon" id="like"></i>
+                  <i class="ri-download-2-line contr-icon"></i>
+                </div>
+                <div class="controls actions">
+                  <i class="ri-skip-back-fill contr-icon"></i>
+                  <i class="ri-rewind-fill contr-icon"></i>
+                  <div class="play-stop">
+                    <i class="ri-pause-fill" id="play"></i>
+                  </div>
+                  <i class="ri-speed-fill contr-icon"></i>
+                  <i class="ri-skip-forward-fill contr-icon"></i>
+                </div>
+                <div class="action-btn actions">
+                  <i class="ri-shuffle-line contr-icon"></i>
+                  <i class="ri-repeat-2-fill contr-icon"></i>
+                </div>
+              </div>
+
+              <div class="right-down">
+                <div class="progress-container">
+                  <span id="current-time">0:00</span>
+                  <div class="progress-bar" id="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                    <div class="progress-thumb" id="progress-thumb"></div>
+                  </div>
+                  <span id="total-time">0:00</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
-        <div class="songc">
-            <h4>Top 100 Billboards</h4>
-            <div class="songs">
-                <h1>#1</h1>
-                <img src="https://i.pinimg.com/736x/61/e7/43/61e74330fea062f5b1653c5c94b49fec.jpg" alt="img">
-                <div>
-                    <h1>Despacito</h1>
-                    <p>LUIS Fonsi Daddy..</p>
-                </div>
-                <h1>Despacito</h1>
-            </div>
-            <div class="songs">
-                <h1>#1</h1>
-                <img src="https://i.pinimg.com/736x/61/e7/43/61e74330fea062f5b1653c5c94b49fec.jpg" alt="img">
-                <div>
-                    <h1>Despacito</h1>
-                    <p>LUIS Fonsi Daddy..</p>
-                </div>
-                <h1>Despacito</h1>
-            </div>
-            <div class="songs">
-                <h1>#1</h1>
-                <img src="https://i.pinimg.com/736x/61/e7/43/61e74330fea062f5b1653c5c94b49fec.jpg" alt="img">
-                <div>
-                    <h1>Despacito</h1>
-                    <p>LUIS Fonsi Daddy..</p>
-                </div>
-                <h1>Despacito</h1>
-            </div>
-            <div class="songs">
-                <h1>#1</h1>
-                <img src="https://i.pinimg.com/736x/61/e7/43/61e74330fea062f5b1653c5c94b49fec.jpg" alt="img">
-                <div>
-                    <h1>Despacito</h1>
-                    <p>LUIS Fonsi Daddy..</p>
-                </div>
-                <h1>Despacito</h1>
-            </div>
-            <div class="songs">
-                <h1>#1</h1>
-                <img src="https://i.pinimg.com/736x/61/e7/43/61e74330fea062f5b1653c5c94b49fec.jpg" alt="img">
-                <div>
-                    <h1>Despacito</h1>
-                    <p>LUIS Fonsi Daddy..</p>
-                </div>
-                <h1>Despacito</h1>
-            </div>
-            <div class="songs">
-                <h1>#1</h1>
-                <img src="https://i.pinimg.com/736x/61/e7/43/61e74330fea062f5b1653c5c94b49fec.jpg" alt="img">
-                <div>
-                    <h1>Despacito</h1>
-                    <p>LUIS Fonsi Daddy..</p>
-                </div>
-                <h1>Despacito</h1>
-            </div>
-        </div>
-        <div class="paying"></div>
+      </div>
     </main>
-    <footer></footer>
-</body>
+    <script src="script/script.js"></script>
+  </body>
 </html>
