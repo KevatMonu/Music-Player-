@@ -496,7 +496,6 @@ body {
   cursor: grab;
 }
 
-/** Responsive Design **/
 .sidebar-overlay {
   display: none;
   position: fixed;

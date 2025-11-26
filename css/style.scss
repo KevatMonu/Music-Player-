@@ -559,12 +559,7 @@ body {
   }
 }
 
-/** Responsive Design **/
-// ============================================
-// MOBILE NAVIGATION COMPONENTS
-// ============================================
 
-// Sidebar overlay for mobile
 .sidebar-overlay {
   display: none;
   position: fixed;
@@ -585,7 +580,7 @@ body {
   }
 }
 
-// Hamburger menu icon
+
 .hamburger-menu {
   display: none;
   font-size: 1.8rem;
@@ -639,11 +634,9 @@ body {
   }
 }
 
-// ============================================
-// MOBILE & SMALL TABLETS (769px and below)
-// ============================================
+
 @media (max-width: 768px) {
-  // Show hamburger menu
+
   .hamburger-menu {
     display: block;
   }
@@ -654,7 +647,7 @@ body {
   .side-menu {
     display: none;
   }
-  // Sidebar with slide-in animation
+
   .music-container .side-bar {
     position: fixed;
     width: 280px;
@@ -672,14 +665,14 @@ body {
     }
   }
 
-  // Main content
+ 
   .main-cont {
     margin-left: 0;
     width: 100%;
     height: calc(100vh - 16vh);
     padding: 0 1rem;
 
-    // Navigation
+    
     .nav {
       padding-left: 3.5rem;
 
@@ -701,7 +694,7 @@ body {
       }
     }
 
-    // Recently Played Section
+   
     .recent-played {
       min-height: auto;
 
@@ -746,7 +739,7 @@ body {
       }
     }
 
-    // Top Songs Section
+    
     .Top-Songs {
       .top-title {
         font-size: 1.2rem;
@@ -758,7 +751,7 @@ body {
         column-gap: 0.6rem;
         padding: 0.6rem 0;
 
-        // Hide on mobile
+        
         .album-name,
         .song-view,
         .song-time,
@@ -796,7 +789,7 @@ body {
     }
   }
 
-  // Music Controller
+ 
   .music-controller {
     left: 0;
     width: 100%;
@@ -908,7 +901,7 @@ body {
           font-size: 1.1rem;
         }
 
-        // Hide some icons on very small screens
+
         i:nth-child(2),
         i:nth-child(3) {
           display: none;
@@ -1001,7 +994,7 @@ body {
             font-size: 1.1rem;
           }
 
-          // Hide skip buttons on very small screens
+     
           .contr-icon:nth-child(2),
           .contr-icon:nth-child(4) {
             display: none;
