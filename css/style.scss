@@ -32,19 +32,25 @@
   box-sizing: border-box;
 }
 
+*::selection {
+  background-color: transparent;
+}
+
 html,
 body {
   width: 100%;
   height: 100%;
   font-family: Roboto, sans-serif;
-  background: linear-gradient(
-    180deg,
-    var(--bg-gradient-start),
-    var(--bg-gradient-end)
-  );
+  background: linear-gradient(180deg,
+      var(--bg-gradient-start),
+      var(--bg-gradient-end));
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
+}
+
+*h3 {
+  cursor: pointer;
 }
 
 .music-container {
@@ -63,11 +69,9 @@ body {
     padding: 0 1.5rem;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.12),
-      rgba(0, 0, 0, 0.06)
-    );
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.12),
+        rgba(0, 0, 0, 0.06));
     z-index: 40;
 
     .side-top {
@@ -80,15 +84,19 @@ body {
       .three-dot {
         display: flex;
         gap: 0.5rem;
+
         i {
           font-size: 0.8rem;
         }
+
         i:nth-child(1) {
           color: red;
         }
+
         i:nth-child(2) {
           color: blue;
         }
+
         i:nth-child(3) {
           color: green;
         }
@@ -172,6 +180,7 @@ body {
         .img-con {
           width: 2.5rem;
           height: 2.5rem;
+
           img {
             width: 100%;
             height: 100%;
@@ -198,6 +207,7 @@ body {
 .main-cont::-webkit-scrollbar {
   display: none;
 }
+
 .main-cont {
   margin-left: 20%;
   width: calc(100% - 20%);
@@ -223,6 +233,7 @@ body {
     top: 0;
     background-color: var(--bg-gradient-start);
     z-index: 10;
+
     .nav1 {
       font-size: 2rem;
       font-weight: 600;
@@ -236,6 +247,7 @@ body {
       i:nth-child(1) {
         transform: rotate(90deg);
       }
+
       i {
         font-size: 1.5rem;
       }
@@ -244,6 +256,7 @@ body {
         width: 2.5rem;
         height: 2.5rem;
         border-radius: 50%;
+
         img {
           width: 100%;
           height: 100%;
@@ -282,6 +295,7 @@ body {
           width: 11vw;
           height: 11vw;
           margin-bottom: 0.5rem;
+
           img {
             width: 100%;
             height: 100%;
@@ -293,7 +307,9 @@ body {
         h3 {
           font-size: 1rem;
           font-weight: 500;
+          cursor: pointer;
         }
+
         p {
           font-size: 0.8rem;
           font-weight: 400;
@@ -355,6 +371,7 @@ body {
               font-size: 1rem;
               font-weight: 500;
             }
+
             p {
               font-size: 0.8rem;
               font-weight: 400;
@@ -392,6 +409,7 @@ body {
           display: flex;
           align-items: center;
           justify-self: center;
+
           .like-btn {
             font-size: 1.5rem;
             background: transparent;
@@ -444,6 +462,7 @@ body {
     .left-img {
       width: 6vw;
       height: 10vh;
+
       img {
         width: 100%;
         height: 100%;
@@ -472,20 +491,25 @@ body {
         align-items: center;
         justify-content: center;
         padding-top: 0.5rem;
+
         .like-btn {
           &:hover {
             color: var(--text-primary);
           }
         }
+
         .contr-icon {
           font-size: 1.5rem;
           cursor: pointer;
+
           &:hover {
             color: var(--primary);
           }
         }
-        #play{
+
+        #play {
           font-size: 1.5rem;
+
           &:hover {
             color: var(--text-primary);
           }
@@ -528,29 +552,45 @@ body {
         .progress-bar {
           position: relative;
           width: 100%;
-          height: 0.25rem;
-          background: rgba(255, 255, 255, 0.15);
-          border-radius: 0.625rem;
           cursor: pointer;
           margin: 0 0.5rem;
 
-          .progress-fill {
-            height: 100%;
-            width: 0%;
-            background: var(--player-progress-fill);
-            border-radius: 0.625rem;
+          // .progress-fill {
+          //   height: 100%;
+          //   width: 0%;
+          //   background: var(--player-progress-fill);
+          //   border-radius: 0.625rem;
+          // }
+
+          // .progress-thumb {
+          //   position: absolute;
+          //   top: -0.25rem;
+          //   left: 0%;
+          //   width: 0.75rem;
+          //   height: 0.75rem;
+          //   background: #fff;
+          //   border-radius: 50%;
+          //   transform: translateX(-50%);
+          //   box-shadow: 0 0 0.625rem rgba(255, 255, 255, 0.8);
+          //   cursor: grab;
+          // }
+
+          #progress {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 0.25rem;
+            margin-bottom: 0.75rem;
+            border-radius: 50px;
+            cursor: pointer;
           }
 
-          .progress-thumb {
-            position: absolute;
-            top: -0.25rem;
-            left: 0%;
+          #progress::-webkit-slider-thumb {
+            -webkit-appearance: none;
             width: 0.75rem;
             height: 0.75rem;
-            background: #fff;
+            background: #eaff00;
             border-radius: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 0 0.625rem rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 0.625rem rgba(221, 255, 0, 0.8);
             cursor: grab;
           }
         }
@@ -596,6 +636,7 @@ body {
   #three {
     display: none;
   }
+
   .music-container .side-bar {
     width: 30vw;
   }
@@ -603,6 +644,7 @@ body {
   .side-bottom {
     display: none;
   }
+
   .main-cont {
     margin-left: 280px;
     width: calc(100% - 280px);
@@ -640,6 +682,7 @@ body {
   .hamburger-menu {
     display: block;
   }
+
   #three {
     display: none;
   }
@@ -652,11 +695,9 @@ body {
     position: fixed;
     width: 280px;
     transform: translateX(-100%);
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.95),
-      rgba(0, 0, 0, 0.9)
-    );
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.95),
+        rgba(0, 0, 0, 0.9));
     z-index: 50;
     transition: transform 0.3s ease;
 
@@ -665,14 +706,14 @@ body {
     }
   }
 
- 
+
   .main-cont {
     margin-left: 0;
     width: 100%;
     height: calc(100vh - 16vh);
     padding: 0 1rem;
 
-    
+
     .nav {
       padding-left: 3.5rem;
 
@@ -694,7 +735,7 @@ body {
       }
     }
 
-   
+
     .recent-played {
       min-height: auto;
 
@@ -739,7 +780,7 @@ body {
       }
     }
 
-    
+
     .Top-Songs {
       .top-title {
         font-size: 1.2rem;
@@ -751,7 +792,7 @@ body {
         column-gap: 0.6rem;
         padding: 0.6rem 0;
 
-        
+
         .album-name,
         .song-view,
         .song-time,
@@ -789,7 +830,7 @@ body {
     }
   }
 
- 
+
   .music-controller {
     left: 0;
     width: 100%;
@@ -861,9 +902,11 @@ body {
   #three {
     display: none;
   }
+
   .side-menu {
     display: none;
   }
+
   .main-cont {
     .recent-played {
       .recent-con {
@@ -881,9 +924,11 @@ body {
   #three {
     display: none;
   }
+
   .side-menu {
     display: none;
   }
+
   .main-cont {
     padding: 0 0.6rem;
 
@@ -994,7 +1039,7 @@ body {
             font-size: 1.1rem;
           }
 
-     
+
           .contr-icon:nth-child(2),
           .contr-icon:nth-child(4) {
             display: none;
@@ -1033,12 +1078,15 @@ body {
     top: 1.2rem;
     left: 1.2rem;
   }
+
   .side-menu {
     display: none;
   }
+
   #three {
     display: none;
   }
+
   .main-cont {
     padding: 0 0.5rem;
 
@@ -1129,7 +1177,7 @@ body {
       width: calc(100% - 20%);
 
       .right-top {
-      
+
         .actions {
           gap: 0.3rem;
 

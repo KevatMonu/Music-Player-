@@ -26,6 +26,14 @@
   box-sizing: border-box;
 }
 
+*::-moz-selection {
+  background-color: transparent;
+}
+
+*::selection {
+  background-color: transparent;
+}
+
 html,
 body {
   width: 100%;
@@ -35,6 +43,10 @@ body {
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
+}
+
+* h3 {
+  cursor: pointer;
 }
 
 .music-container {
@@ -261,6 +273,7 @@ body {
 .main-cont .recent-played .recent-con .music-con h3 {
   font-size: 1rem;
   font-weight: 500;
+  cursor: pointer;
 }
 .main-cont .recent-played .recent-con .music-con p {
   font-size: 0.8rem;
@@ -471,28 +484,24 @@ body {
 .music-controller .right .right-down .progress-container .progress-bar {
   position: relative;
   width: 100%;
-  height: 0.25rem;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 0.625rem;
   cursor: pointer;
   margin: 0 0.5rem;
 }
-.music-controller .right .right-down .progress-container .progress-bar .progress-fill {
-  height: 100%;
-  width: 0%;
-  background: var(--player-progress-fill);
-  border-radius: 0.625rem;
+.music-controller .right .right-down .progress-container .progress-bar #progress {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 0.25rem;
+  margin-bottom: 0.75rem;
+  border-radius: 50px;
+  cursor: pointer;
 }
-.music-controller .right .right-down .progress-container .progress-bar .progress-thumb {
-  position: absolute;
-  top: -0.25rem;
-  left: 0%;
+.music-controller .right .right-down .progress-container .progress-bar #progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
   width: 0.75rem;
   height: 0.75rem;
-  background: #fff;
+  background: #eaff00;
   border-radius: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 0 0.625rem rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 0.625rem rgba(221, 255, 0, 0.8);
   cursor: grab;
 }
 

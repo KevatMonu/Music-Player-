@@ -1,3 +1,5 @@
+import { musicList } from "../music/music.js";
+
 const bookmarkedSongs = [
   {
     image: "assets/music-image/saiba.jpeg",
@@ -9,7 +11,7 @@ const bookmarkedSongs = [
     songName: "Ik Kudi",
     writer: "Arpit Bala & Wolf.Cryman",
   },
- 
+
 ];
 
 const recentlyPlayed = [
@@ -138,6 +140,57 @@ const topSongs = [
   },
 ];
 
+const audio = new Audio(); //making a global audio object
+
+const progressbar = document.querySelector("#progress");
+
+function playAudio(src) {
+
+  audio.src = src;
+
+  audio.addEventListener("loadedmetadata", () => {
+    let duration = (audio.duration / 60).toFixed(2);
+  });
+
+  return audio;
+}
+
+function updateProgress() {
+  audio.addEventListener("timeupdate", () => {
+    let progress = (audio.currentTime / audio.duration) * 100;
+
+    progressbar.value = progress;
+
+    // console.log(progressbar.value);
+
+    if (!audio.paused) {
+      let currValue = progressbar.value;
+      let min = progressbar.min || 0;
+      let max = progressbar.max || 100;
+
+      let percent = ((currValue - min) / (max - min)) * 100;
+
+      // console.log(percent + "%");
+
+      //apply gradient
+      progressbar.style.background = `
+  linear-gradient(to right, 
+    #eaff00 0%, 
+    #eaff00 ${percent}%, 
+    #d1d1d1 ${percent}%, 
+    #d1d1d1 100%
+  )
+`;
+    }
+
+  })
+
+  //to implement seekbar
+  progressbar.addEventListener("change", () => {
+    audio.currentTime = (audio.duration / 100) * progressbar.value;
+  })
+}
+
 function formatViews(n) {
   if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M";
   if (n >= 1_000) return (n / 1_000).toFixed(1) + "K";
@@ -219,12 +272,20 @@ if (playBtn) {
   playBtn.innerHTML = `<i class="ri-play-fill"></i>`;
 
   playBtn.addEventListener("click", () => {
+    const audio = playAudio("music/sahiba-2023.mp3");
+
     if (playBtn.innerHTML.includes("pause")) {
       playBtn.innerHTML = `<i class="ri-play-fill"></i>`;
       playBtn.style.fontSize = "1.5rem";
+      if (!audio.paused) {
+        audio.pause();
+      }
     } else {
       playBtn.innerHTML = `<i class="ri-pause-fill"></i>`;
       playBtn.style.fontSize = "1.5rem";
+      if (audio.paused) {
+        audio.play();
+      }
     }
   });
 }
@@ -255,4 +316,38 @@ hamburger.addEventListener("click", () => {
 overlay.addEventListener("click", () => {
   sidebar.classList.remove("active");
   overlay.classList.remove("active");
+});
+
+const mainContainer = document.querySelector(".music-container");
+mainContainer.addEventListener("click", (e) => {
+  let musicBanner = document.querySelector(".music-controller .left .left-img img");
+
+  // checking if h3 is present or not
+  if (e.target.closest("h3")) {
+    // console.log(e.target.closest("h3").innerHTML);
+
+    // finding music from the musicList
+    const music = musicList.find((m) => m.songName === e.target.closest("h3").innerHTML);
+
+    // console.log(music?.source);
+
+    const audio = playAudio(music?.source);
+
+    //setting music banner image
+    musicBanner.src = "";
+    musicBanner.src = music?.banner;
+
+    audio.play()
+      .then(() => {
+        console.log("playing... " + music.songName);
+        updateProgress();
+
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+  } else {
+    console.log(e.target.parentElement.nextElementSibling || e.target.parentElement.contains("h3").closest("h3").innerHTML);
+  }
 });
